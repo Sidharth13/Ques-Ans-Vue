@@ -21,6 +21,12 @@
             <label>Answer</label>
           </div>
         </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input type="text" v-model="res" required />
+            <label>Reason</label>
+          </div>
+        </div>
         <button type="submit" class="btn">Submit</button>
         <router-link to="/" class="btn grey">Cancel</router-link>
       </form>
@@ -36,7 +42,8 @@ export default {
     return {
       quesno: null,
       ques: null,
-      ans: null
+      ans: null,
+      res: null
     };
   },
   methods: {
@@ -45,7 +52,8 @@ export default {
         .add({
           quesno: this.quesno,
           ques: this.ques,
-          ans: this.ans
+          ans: this.ans,
+          res: this.res
         })
         .then(docRef => {
           console.log("Client added: ", docRef.id);

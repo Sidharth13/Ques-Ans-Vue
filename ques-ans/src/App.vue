@@ -9,10 +9,17 @@
 
 <script>
 import Navbar from "./components/Navbar";
+import NewQuesAns from "./components/NewQuesAns";
 export default {
   name: "App",
   components: {
-    Navbar
-  }
+    Navbar,
+    NewQuesAns,
+  },
 };
 </script>
+<style>
+nav {
+  margin-bottom: 10px;
+}
+</style>

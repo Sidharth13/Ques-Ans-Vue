@@ -6,6 +6,7 @@
       </li>
       <li class="collection-item">Ques No#: {{quesno}}</li>
       <li class="collection-item">Answer: {{ans}}</li>
+      <li class="collection-item">Reason: {{res}}</li>
     </ul>
     <router-link to="/" class="btn grey">Back</router-link>
     <button @click="deleteQues" class="btn red">Delete</button>
@@ -29,7 +30,8 @@ export default {
     return {
       quesno: null,
       ques: null,
-      ans: null
+      ans: null,
+      res: null
     };
   },
   beforeRouteEnter(to, from, next) {
@@ -41,7 +43,8 @@ export default {
           next(vm => {
             vm.quesno = doc.data().quesno;
             vm.ques = doc.data().ques;
-            vm.ans = doc = doc.data().ans;
+            vm.ans = doc.data().ans;
+            vm.res = doc.data().res;
           });
         });
       });
@@ -59,6 +62,7 @@ export default {
             this.quesno = doc.data().quesno;
             this.ques = doc.data().ques;
             this.ans = doc.data().ans;
+            this.res = doc.data().res;
           });
         });
     },
